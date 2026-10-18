@@ -1,0 +1,26 @@
+node_modules/
+dist/
+release/
+shots/
+*.log
+.electron-profile/
+data/
+*.zip
+*.7z
+*.blockmap
+
+# Local/generated/user models — do not publish third-party packs.
+public/samples/*.ysm
+public/samples/**/*.ysm
+
+# Test fixtures: keep the tiny default V1 fixture only.
+test-fixtures/*.ysm
+!test-fixtures/default-v1.ysm
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.local
+.env
+.env.*
+!.env.example

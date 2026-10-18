@@ -1,0 +1,84 @@
+{
+  "name": "ysm-studio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "YSM Studio Previewer — standalone Yes Steve Model desktop viewer",
+  "author": "SunriseSnow (https://github.com/FGXYX)",
+  "license": "MIT",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"vite --port 5173 --strictPort\" \"wait-on http://127.0.0.1:5173 && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron . --no-sandbox --user-data-dir=.electron-profile\"",
+    "electron:build": "npm run build && electron-builder --win portable --x64 --config.win.signAndEditExecutable=false",
+    "start": "electron . --no-sandbox --user-data-dir=.electron-profile",
+    "wasm:build": "powershell -ExecutionPolicy Bypass -File scripts/build-wasm.ps1",
+    "typecheck": "tsc --noEmit",
+    "sample": "node scripts/sync-sample.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/howler": "^2.2.12",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "clsx": "^2.1.1",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "howler": "^2.2.4",
+    "lucide-react": "^0.468.0",
+    "molangjs": "^1.7.1",
+    "playwright-core": "^1.49.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.14",
+    "three": "^0.180.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.7",
+    "wait-on": "^8.0.1",
+    "zustand": "^5.0.2"
+  },
+  "build": {
+    "appId": "rip.ysm.studio",
+    "productName": "YSM Studio Previewer",
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "allowScripts": {
+    "electron@33.4.11": true,
+    "esbuild@0.25.12": true
+  }
+}
