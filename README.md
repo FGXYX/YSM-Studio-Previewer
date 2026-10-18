@@ -46,7 +46,8 @@ Independent Windows 11 desktop previewer for **Yes Steve Model** (`.ysm`). It re
 ## Quick start
 
 ```powershell
-cd ysm-studio
+git clone https://github.com/FGXYX/YSM-Studio-Previewer.git
+cd YSM-Studio-Previewer
 npm install
 npm run dev            # browser preview at http://127.0.0.1:5173
 npm run electron:dev   # Windows desktop window

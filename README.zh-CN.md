@@ -46,7 +46,8 @@
 ## 快速开始
 
 ```powershell
-cd ysm-studio
+git clone https://github.com/FGXYX/YSM-Studio-Previewer.git
+cd YSM-Studio-Previewer
 npm install
 npm run dev            # 浏览器预览：http://127.0.0.1:5173
 npm run electron:dev   # Windows 桌面窗口
