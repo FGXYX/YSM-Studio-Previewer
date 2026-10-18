@@ -13,6 +13,8 @@ Independent Windows 11 desktop previewer for **Yes Steve Model** (`.ysm`). It re
 
 **Preview only:** decryption and unpacking are internal in-memory steps. The app has no feature to export decrypted packages or extracted assets.
 
+Developer and coding-agent guide: [AGENT.md](AGENT.md).
+
 ![YSM Studio](docs/preview.png)
 
 ## What works

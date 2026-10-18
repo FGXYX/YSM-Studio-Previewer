@@ -13,6 +13,8 @@
 
 **仅用于预览：** 解密和解包是内部的纯内存步骤，应用不提供导出解密包或提取资源的功能。
 
+开发与 Agent 指南：[AGENT.md](AGENT.md)。
+
 ![YSM Studio](docs/preview.png)
 
 ## 功能
